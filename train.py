@@ -1,6 +1,6 @@
 '''
 16-fold Cross Validation
-train five models
+train 16 models
 return the average kappa
 '''
 
@@ -34,7 +34,7 @@ if __name__ == '__main__':
     kappaSum = 0
     stateList = []
 
-    for k in range(5):
+    for k in range(16):
         print(f'kfold: {k}')
         # backbone network
         if args.model == 'resnet50d':
@@ -73,8 +73,8 @@ if __name__ == '__main__':
                 totalLoss += loss.item()
                 predList.extend(prediction.detach().cpu())
                 gtList.extend(label.cpu())
-
-                
+    
+    
                 # update
                 optimizer.zero_grad()
                 loss.backward()
