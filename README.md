@@ -76,6 +76,6 @@ python test_multi.py --model modelname
 Use `test_multi.py`, you can get a extra file `avg.csv` which is the average value of all csv file.
 
 ## Notes
-Our code is used for model resnet50d (that is all 'modelname' in instruct is 'resnet50d' ), if you want to use other models, you should edit the `train.py`, `test.py` and `test_multi.py`.
+Our code is used for model resnet50d (that is, all 'modelname' in instruct is 'resnet50d' ), if you want to use other models, you should edit the `train.py`, `test.py` and `test_multi.py`.
 
 Also, you need create file structure for your model.
