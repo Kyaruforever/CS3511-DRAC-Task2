@@ -62,7 +62,7 @@ For example in our code, we use resnet50d as the model, the file structure:
 
 ## training
 ```
-python main.py --model modelname
+python train.py --model modelname
 ```
 ## Test
 ```
