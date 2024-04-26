@@ -62,15 +62,20 @@ For example in our code, we use resnet50d as the model, the file structure:
 
 ## training
 ```
-python main.py --model resnet50d
+python main.py --model modelname
 ```
 ## Test
 ```
-python test.py --model resnet50d --file-name XXX.pkl
-python test_multi.py --model resnet50d
+python test.py --model modelname --file-name XXX.pkl
+python test_multi.py --model modelname
 ```
 `test.py` is used to test one single model checkpoint.
 
 `test_multi.py` is used to test all checkpoints of one model. 
 
 Use `test_multi.py`, you can get a extra file `avg.csv` which is the average value of all csv file.
+
+## Notes
+Our code is used for model resnet50d, if you want to use other models, you should edit the `train.py`, `test.py` and `test_multi.py`.
+
+Also, you need create file structure for your model.
