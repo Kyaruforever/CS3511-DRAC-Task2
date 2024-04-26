@@ -60,7 +60,7 @@ For example in our code, we use resnet50d as the model, the file structure:
 └── test.py
 ```
 
-## training
+## Train
 ```
 python train.py --model modelname
 ```
