@@ -20,10 +20,10 @@ class AddGaussianNoise(object):
 
 
 class dataset(data.Dataset):
-    def __init__(self, train=False, val=False, all=False, test=False, kfold=0, aug=True):
+    def __init__(self, train=False, val=False, test=False, kfold=0, aug=True):
         self.trainaug = aug and train
         #path
-        if train or val or all:
+        if train or val:
             imgPath = 'data/1. Original Images/a. Training Set/'
             gtPath = 'data/2. Groundtruths/a. DRAC2022_ Image Quality Assessment_Training Labels.csv'
         else: #test
@@ -36,12 +36,6 @@ class dataset(data.Dataset):
             pathList.sort(key=lambda x:int(x.split('.')[0]))
             for name in pathList:
                 self.imgs.append([imgPath+name,-1,name])
-        elif all:
-            csvFile = pd.read_csv(gtPath)
-            for _, row in csvFile.iterrows():
-                name = row['image name']
-                label = int(row['image quality level'])
-                self.imgs.append([imgPath+name, label, name])
         elif train or val:
             csvFile = pd.read_csv(gtPath)
             labels = []

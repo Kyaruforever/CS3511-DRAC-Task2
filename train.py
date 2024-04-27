@@ -13,7 +13,6 @@ import timm
 from torch.utils.data import DataLoader
 from dataset import dataset
 from sklearn.metrics import cohen_kappa_score,accuracy_score
-from timm.data.mixup import Mixup
 from timm.loss import SoftTargetCrossEntropy
 
 
