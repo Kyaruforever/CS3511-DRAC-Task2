@@ -60,7 +60,6 @@ if __name__ == '__main__':
             # train
             net.train()
             totalLoss = 0
-            totalLoss_mix = 0
             predList = []
             gtList = []
             for img, label, name in trainloader:
@@ -81,10 +80,8 @@ if __name__ == '__main__':
 
             kappa = cohen_kappa_score(gtList, predList, weights='quadratic')
             acc = accuracy_score(gtList, predList)
-            if args.mixup:
-                print(f'Train Epoch:{epoch}, Loss:{totalLoss}, Loss_mixup:{totalLoss_mix}, Acc: {acc}, Kappa: {kappa}')
-            else:
-                print(f'Train Epoch:{epoch}, Loss:{totalLoss}, Acc: {acc}, Kappa: {kappa}')
+           
+            print(f'Train Epoch:{epoch}, Loss:{totalLoss}, Acc: {acc}, Kappa: {kappa}')
 
             # validation
             if (epoch+1) % args.eval_cycle == 0:
