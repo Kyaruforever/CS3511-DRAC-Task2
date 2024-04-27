@@ -60,14 +60,14 @@ For example in our code, we use resnet50d as the model, the file structure:
 └── test.py
 ```
 
-## training
+## Train
 ```
-python train.py --model modelname
+python train.py 
 ```
 ## Test
 ```
-python test.py --model modelname --file-name XXX.pkl
-python test_multi.py --model modelname
+python test.py --file-name XXX.pkl
+python test_multi.py 
 ```
 `test.py` is used to test one single model checkpoint.
 
