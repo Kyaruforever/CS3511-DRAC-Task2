@@ -45,7 +45,7 @@ class dataset(data.Dataset):
                 label = int(row['image quality level'])
                 labels.append(label)
                 imgList.append([imgPath+name, label, name])
-            skf = StratifiedKFold(n_splits=10) #no need for shuffle
+            skf = StratifiedKFold(n_splits=16) #no need for shuffle
             for index, (train_index, val_index) in enumerate(skf.split(np.zeros_like(labels),labels)):
                 if index == kfold:
                     break
